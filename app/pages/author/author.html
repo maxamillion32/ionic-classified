@@ -1,0 +1,42 @@
+<ion-navbar *navbar danger>
+   <!--  <button menuToggle>
+       <ion-icon name="menu"></ion-icon>
+   </button> -->
+    <ion-title>Profile</ion-title>
+</ion-navbar>
+
+<ion-content class="profile">
+    <div *ngIf="profile" class="selection">
+        <ion-card>
+            <ion-card-content>
+                <img src="{{profile.picture}}"/>
+                <h2>{{profile.firstName}} {{profile.lastName}}</h2>
+                <h3>{{profile.title}}</h3>
+            </ion-card-content>
+
+            <ion-list>
+                <a href="tel:{{profile.Phone__c}}" ion-item>
+                    <ion-icon name="call" item-left></ion-icon>
+                    <p>Call Office</p>
+                    <h2>{{profile.phone}}</h2>
+                </a>
+                <a href="tel:{{profile.phone}}" ion-item>
+                    <ion-icon name="call" item-left></ion-icon>
+                    <p>Call Mobile</p>
+                    <h2>{{profile.mobilePhone}}</h2>
+                </a>
+                <a href="tel:{{profile.phone}}" ion-item>
+                    <ion-icon name="text" item-left></ion-icon>
+                    <p>Text</p>
+                    <h2>{{profile.mobilePhone}}</h2>
+                </a>
+                <a href="mailto:{{profile.email}}" ion-item>
+                    <ion-icon name="mail" item-left></ion-icon>
+                    <p>Email</p>
+                    <h2>{{profile.email}}</h2>
+                </a>
+            </ion-list>
+
+        </ion-card>
+    </div>
+</ion-content>

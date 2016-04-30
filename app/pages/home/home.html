@@ -1,0 +1,67 @@
+<ion-navbar *navbar primary>
+  <ion-title>
+    Classified
+  </ion-title>
+</ion-navbar>
+
+<ion-row  class="main-menu">
+    <ion-col width-20>
+        <button full>
+            <ion-icon name="home"></ion-icon>
+        </button>
+    </ion-col>
+    <ion-col width-20>
+        <button full (click)="gotoPage(_postPage)" >
+            <ion-icon name="md-add-circle"></ion-icon>
+        </button>
+    </ion-col>
+    <ion-col width-20>
+        <button full >
+            <ion-icon name="md-search"></ion-icon>
+        </button>
+    </ion-col>
+    <ion-col width-20>
+        <button full >
+            <ion-icon name="md-menu" ></ion-icon>
+        </button>
+    </ion-col>
+    <ion-col width-20>
+        <button full  (click)="gotoPage(_profilePage)">
+            <ion-icon name="md-person-add"></ion-icon>
+        </button>
+    </ion-col>
+</ion-row>
+
+<ion-content class="home">
+  <h2>Featured Ads</h2>
+  <ion-card>
+
+    <img src="images/dummys.jpg">
+    <button fab fab-right fab-top>
+      <ion-icon name="pin"></ion-icon>
+    </button>
+
+    <ion-item>
+      <ion-icon name="football" item-left large></ion-icon>
+      <h2>Museum of Football</h2>
+      <p>11 N. Way St, Madison, WI 53703</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="wine" item-left large ></ion-icon>
+      <h2>Institute of Fine Cocktails</h2>
+      <p>14 S. Hop Avenue, Madison, WI 53703</p>
+    </ion-item>
+
+    <ion-item>
+      <span item-left>18 min</span>
+      <span item-left>(2.6 mi)</span>
+      <button primary clear item-right>
+        <ion-icon name="navigate"></ion-icon>
+        Start
+      </button>
+    </ion-item>
+
+</ion-card>
+
+</ion-content>
