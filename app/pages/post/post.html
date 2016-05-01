@@ -7,38 +7,36 @@
 
 <ion-content class="post">
   
-    <ion-list>
+    <ion-list inset>
       <ion-item>
-        <ion-label stacked>Title</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-label>Title</ion-label>
+        <ion-input type="text" #title></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>Description</ion-label>
-        <ion-input type="password"></ion-input>
+        <ion-label>Description</ion-label>
+        <ion-input type="text" #description></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>Price</ion-label>
-        <ion-input type="number"></ion-input>
+        <ion-label>Price</ion-label>
+        <ion-input type="number" #price></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>Featured</ion-label>
-        <ion-toggle checked="false"></ion-toggle>
+        <ion-label>Featured</ion-label>
+        <ion-toggle checked="false" #featured></ion-toggle>
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>Category</ion-label>
-        <ion-select>
-          <ion-option value="item">Item</ion-option>
-          <ion-option value="item">Item</ion-option>
-          <ion-option value="item">Item</ion-option>
+        <ion-label>Category</ion-label>
+        <ion-select #category>
+          <ion-option *ngFor="#cat of categories" value="{{cat}}">{{ cat }}</ion-option>
         </ion-select>     
       </ion-item>
     
       <ion-item>
-        <button block large>Save</button>
+        <button block large (click)="createAd(title, description, price, category)">Save</button>
       </ion-item>
 
     </ion-list>

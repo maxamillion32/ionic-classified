@@ -16,7 +16,7 @@
         </button>
     </ion-col>
     <ion-col width-20>
-        <button full >
+        <button full (click)="gotoPage(_listPage)">
             <ion-icon name="md-search"></ion-icon>
         </button>
     </ion-col>
@@ -33,10 +33,16 @@
 </ion-row>
 
 <ion-content class="home">
-  <h2>Featured Ads</h2>
+  <ion-row>
+    <ion-col width-100>
+      <h2>Featured Ads</h2>
+    </ion-col>
+  </ion-row >
+  
   <ion-card>
 
     <img src="images/dummys.jpg">
+
     <button fab fab-right fab-top>
       <ion-icon name="pin"></ion-icon>
     </button>

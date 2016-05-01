@@ -1,10 +1,11 @@
 import {Injectable} from 'angular2/core';
+import {Observable} from 'rxjs/Observable';
 
 export class postItem {
     _id: string;
     title: string;
     description: string;
-    price: string;
+    price: number;
     mainImage: string;
     category: string;
     featured: boolean;
@@ -26,7 +27,7 @@ export class PostService {
 
     }
 
-    createAdInService(title, description, price, mainImage, category, featured) {
+    postAd(title, description, price, mainImage, category, featured) {
         let tmp: postItem = {
             _id: (Date.now()).toString(),
             title: title,
@@ -43,6 +44,19 @@ export class PostService {
 
     getAds() {
         return this.ads;
+    }
+
+    findById(id) {
+        this.ads.forEach(function(item){
+            if(item._id = id){
+
+                return Observable.create(observer => {
+                    observer.next(item);
+                    observer.complete();
+                });
+                
+            }
+        });
     }
 
 

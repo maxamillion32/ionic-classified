@@ -1,21 +1,29 @@
-import {Page} from 'ionic-angular';
+import {Page, NavController} from 'ionic-angular';
+import {OnInit} from 'angular2/core';
+
+import {PostService} from './../../services/PostService';
+import {DetailPage} from './../detail/detail'
 
 @Page({
-	templateUrl: 'build/pages/profile/profile.html'
+	templateUrl: 'build/pages/list/list.html'
 })
-export class Profile {
+export class ListPage {
 
-	public profile = {
-		picture: 'images/anis-Shamshuddin-Socialmosaic.jpg',
-		firstName: 'Anis',
-		lastName: 'Anis',
-		title: 'Anis',
-		phone: '021-366-4777',
-		mobilePhone: '0334-3853136',
-		email: 'anis_momin@hotmail.com',
-	};
+	ads = [];
+	
+	constructor(private _postService: PostService, public nav: NavController) {
+	
+	}
 
-	constructor() {
 
+	ngOnInit() {
+        this.ads = this._postService.getAds();  
+    }
+	
+
+	showItem(id) {
+		 this.nav.push(DetailPage, {
+            id: id
+        });
 	}
 }
