@@ -27,16 +27,18 @@ export class PostPage {
 	}
 
 	createAd(title, description, price, category){
-	      title = title.value
-	      description = description.value;
-	      price = price.value;
-	      category = category.text;
+		title = title.value;
+      	description = description.value;
+      	price = price.value;
+      	category = category.text;
 	      
-	      let featured = this.featured;
-	      let postImage = 'images/dummys.jpg';
+      	let featured = this.featured;
+      	let postImage = 'images/dummys.jpg';
 	      
-	      this._postService.postAd(title, description, price, postImage, category, featured);
-	      
-	      this.navParams.data.ads.push(ListPage);
+      	this._postService.postAd(title, description, price, postImage, category, featured);
+	    
+		this.nav.push(ListPage); 
 	}
+
+
 }

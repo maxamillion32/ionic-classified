@@ -1,4 +1,5 @@
 import {Injectable} from 'angular2/core';
+import {Http, Headers} from 'angular2/http';
 import {Observable} from 'rxjs/Observable';
 
 export class postItem {
@@ -46,9 +47,17 @@ export class PostService {
         return this.ads;
     }
 
+
+
     findById(id) {
-        this.ads.forEach(function(item){
-            if(item._id = id){
+
+        return Observable.create(observer => {
+            observer.next(this.ads[0]);
+            observer.complete();
+        });
+
+       /* this.ads.forEach(function(item){
+            if (item._id = id) {
 
                 return Observable.create(observer => {
                     observer.next(item);
@@ -56,7 +65,7 @@ export class PostService {
                 });
                 
             }
-        });
+        });*/
     }
 
 

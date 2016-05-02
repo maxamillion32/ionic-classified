@@ -10,17 +10,20 @@ import {PostService} from './../../services/PostService';
 })
 export class DetailPage {
 
-	public ad = null;
-	constructor(private _postService: PostService, public nav: NavController, public navParams : NavParams) {
+  	public ad = null;
+    public selectedItem = null;
+    
+    constructor(private _postService: PostService, public nav: NavController, public navParams : NavParams) {
 
   	}
 
   	ngOnInit() {
   		
-  		let id = this.navParams.get(id);
+      this.ad = this.navParams.get('ad');
+      //console.log(this.selectedItem);
 
-        this._postService.findById(id).subscribe(
-            data => this.ad = data.json(),
+     /* this._postService.findById(this.selectedItem._id).subscribe(
+            data => this.ad = data,
             err => {
                 if (err.status == 404) {
                     this.ad = 'This repo does not have a README. :(';
@@ -29,15 +32,8 @@ export class DetailPage {
                 }
             },
             () => console.log('getDetails completed')
-        );
+        );*/
     }
 
-
-
-
   	
-
-  	gotoPage(page) {
-		this.nav.push(page);
-	}
 }

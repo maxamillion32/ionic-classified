@@ -9,21 +9,19 @@ import {DetailPage} from './../detail/detail'
 })
 export class ListPage {
 
+	_detailPage = DetailPage;
 	ads = [];
 	
 	constructor(private _postService: PostService, public nav: NavController) {
 	
 	}
 
-
 	ngOnInit() {
         this.ads = this._postService.getAds();  
     }
-	
-
-	showItem(id) {
-		 this.nav.push(DetailPage, {
-            id: id
-        });
-	}
+		
+	showItem(ad) {
+		console.log('You selected:', ad);
+        this.nav.push(DetailPage, { ad: ad });
+    }
 }

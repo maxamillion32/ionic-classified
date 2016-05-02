@@ -4,6 +4,25 @@
   </ion-title>
 </ion-navbar>
 
-
-
+<ion-content>
+	<ion-card *ngIf="ad">
+	  <img src="{{ ad.mainImage }}">
+	  <ion-card-content>
+		  <h2>{{ ad.title }}</h2>
+		  <p>{{ ad.description }}</p>
+	  </ion-card-content>
+	  <ion-item>
+	    <button primary clear item-left>
+	      <ion-icon name="thumbs-up"></ion-icon>
+	      <div>12 Likes</div>
+	    </button>
+	    <button primary clear item-left>
+	      <ion-icon name="text"></ion-icon>
+	      <div>4 Comments</div>
+	    </button>
+	    <ion-note item-right>
+	      11h ago
+	    </ion-note>
+	  </ion-item>
+	</ion-card>
 </ion-content>
