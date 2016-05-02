@@ -17,6 +17,8 @@ export class ListPage {
 	}
 
 	ngOnInit() {
+		console.log(this.ads[0]);
+		
         this.ads = this._postService.getAds();  
     }
 		
