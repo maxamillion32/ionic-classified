@@ -41,7 +41,7 @@
   <ion-card *ngFor="#ad of ads">
     <img src="{{ ad.mainImage }}">
     <ion-card-content>
-      <h2>{{ ad.title }} | {{ ad.price | num | currency:'USD':false }}</h2>
+      <h2>{{ ad.title }} | Rs. {{ ad.price }}</h2>
       <p>{{ ad.description }}</p>
     </ion-card-content>
     <ion-item>
