@@ -48,6 +48,16 @@ export class PostService {
     }
 
 
+    deleteItem(ad){
+        for(let i = 0; i < this.ads.length; i++) {
+          if(this.ads[i]._id == ad._id){
+            this.ads.splice(i, 1);
+            if(this.ads) {
+                localStorage.setItem("ads", JSON.stringify(this.ads));
+            }
+          }
+        }  
+    }
 
     findById(id) {
 

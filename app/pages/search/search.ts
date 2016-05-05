@@ -5,9 +5,9 @@ import {PostService} from './../../services/PostService';
 import {DetailPage} from './../detail/detail'
 
 @Page({
-	templateUrl: 'build/pages/list/list.html'
+	templateUrl: 'build/pages/search/search.html'
 })
-export class ListPage {
+export class SearchPage {
 
 	_detailPage = DetailPage;
 	ads = [];
@@ -17,24 +17,11 @@ export class ListPage {
 	}
 
 	ngOnInit() {
-
-		console.log(this.ads[0]);
         this.ads = this._postService.getAds();  
     }
 		
 	showItem(ad) {
-		console.log('You selected:', ad);
         this.nav.push(DetailPage, { ad: ad });
     }
-
-    deleteItem(ad) {
-    	for(let i = 0; i < this.ads.length; i++) {
-	      if(this.ads[i]._id == ad._id){
-	        this._postService.deleteItem(ad);
-	        this.ads.splice(i, 1);
-	      }
-	    }     
-    }
-
-    
+   
 }

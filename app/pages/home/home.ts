@@ -4,6 +4,7 @@ import {OnInit} from 'angular2/core';
 import {PostPage} from './../post/post'
 import {ProfilePage} from './../profile/profile'
 import {ListPage} from './../list/list'
+import {SearchPage} from './../search/search'
 
 import {PostService, postItem} from './../../services/PostService'
 
@@ -15,6 +16,8 @@ export class HomePage {
 	_postPage = PostPage;
 	_profilePage = ProfilePage;
 	_listPage = ListPage;
+	_searchPage = SearchPage;
+
 	public ads : Array<postItem>= null;
 
 	constructor(public nav: NavController, private _postService : PostService) {

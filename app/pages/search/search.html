@@ -1,0 +1,34 @@
+<ion-navbar primary *navbar>
+  <ion-title >
+    Ads List
+  </ion-title>
+</ion-navbar>
+
+<ion-content class="postlist"> 
+    <ion-searchbar placeholder="Primary Searchbar" primary></ion-searchbar>
+    <ion-list>
+      <ion-list-header>
+        Advertisements
+      </ion-list-header>
+      <ion-item-sliding *ngFor="#ad of ads">
+          <ion-item>
+              <ion-thumbnail item-left>
+                  <img src="{{ad.mainImage}}">
+              </ion-thumbnail>
+              <h2> {{ad.title}}</h2>
+              <p> Rs.{{ad.price}} | {{ad.category}}</p>
+              <button clear item-right (click)="showItem(ad)">View</button>
+          </ion-item>
+          <ion-item-options>
+          <button secondary>
+            <ion-icon name="menu"></ion-icon>
+            More
+          </button>
+          <button danger (click)="deleteItem(ad)">
+            <ion-icon name="trash" ></ion-icon>
+            Delete
+          </button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+</ion-content>
