@@ -2,6 +2,7 @@
 import {App, Platform} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {HomePage} from './pages/home/home';
+import {LoginPage} from './pages/login/login';
 
 import {PostService} from './services/PostService';
 
@@ -11,7 +12,7 @@ import {PostService} from './services/PostService';
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
 })
 export class MyApp {
-  rootPage: any = HomePage;
+  rootPage: any = LoginPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {

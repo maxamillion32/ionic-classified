@@ -1,0 +1,27 @@
+<ion-navbar *navbar primary>
+  <ion-title>
+    Login
+  </ion-title>
+</ion-navbar>
+
+
+<ion-content class="login">
+  
+    <ion-list inset>
+      <ion-item>
+        <ion-label>Username</ion-label>
+        <ion-input type="text" [(ngModel)]="usercreds.username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="usercreds.password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <button block large (click)="login(usercreds)">Login</button>
+      </ion-item>
+
+    </ion-list>
+
+</ion-content>

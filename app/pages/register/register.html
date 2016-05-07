@@ -1,0 +1,33 @@
+<ion-navbar *navbar primary>
+  <ion-title>
+    Sign Up
+  </ion-title>
+</ion-navbar>
+
+
+<ion-content class="register">
+  
+    <ion-list inset>
+      
+      <ion-item>
+        <ion-label>Username</ion-label>
+        <ion-input type="text" [(ngModel)]="creds.username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="creds.email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Password</ion-label>
+        <ion-input type="number" [(ngModel)]="creds.password"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <button block large (click)="register(creds)">Register</button>
+      </ion-item>
+
+    </ion-list>
+
+</ion-content>
